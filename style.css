@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f0e8;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #d35400;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pizza-builder {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fafafa;
+    border: 2px solid #eee;
+}
+
+.section-title {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title .icon {
+    font-size: 1.5em;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option-card {
+    flex: 1;
+    min-width: 180px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: white;
+}
+
+.option-card:hover {
+    border-color: #e67e22;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
+}
+
+.option-card.selected {
+    border-color: #e67e22;
+    background: #fff3e0;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+}
+
+.option-card .name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.option-card .info {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.option-card .price {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.option-card .calories {
+    color: #e74c3c;
+}
+
+.topping-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: white;
+    position: relative;
+}
+
+.topping-card:hover {
+    border-color: #9b59b6;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.2);
+}
+
+.topping-card.selected {
+    border-color: #9b59b6;
+    background: #f5eef8;
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.3);
+}
+
+.topping-card .checkmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #9b59b6;
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.topping-card.selected .checkmark {
+    display: flex;
+}
+
+.topping-card .dynamic-info {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.summary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.summary h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.summary-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.summary-item .label {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.summary-item .value {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.summary-item .price-value {
+    color: #fff59d;
+}
+
+.summary-item .cal-value {
+    color: #ffccbc;
+}
+
+.toppings-list {
+    margin-top: 10px;
+    font-size: 0.95em;
+    min-height: 24px;
+}
+
+.toppings-list .no-toppings {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.topping-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 3px;
+    font-size: 0.85em;
+}
+
+.pizza-visual {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pizza-visual .emoji {
+    font-size: 5em;
+    transition: transform 0.3s ease;
+}
+
+.pizza-visual .emoji:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.pizza-visual .name-display {
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.required {
+    color: #e74c3c;
+    font-size: 0.8em;
+}
