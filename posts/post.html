@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Детали поста</title>
+    <link rel="stylesheet" href="/src/assets/styles/style.css" />
+  </head>
+  <body>
+    <main class="post-detail">
+      <a href="/" class="back-link">← Назад ко всем постам</a>
+
+      <article class="post-container">
+        <div id="post-content" class="post-content">
+          <div class="loading">Загрузка поста...</div>
+        </div>
+      </article>
+
+      <section class="comments-section">
+        <h2>Комментарии</h2>
+        <div id="comments-container" class="comments-container">
+          <div class="loading">Загрузка комментариев...</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="post.js" type="module"></script>
+  </body>
+</html>
