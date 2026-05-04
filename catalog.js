@@ -16,17 +16,21 @@ const renderPostItem = (item) => `
 `;
 
 const getPostItems = async ({ limit, page }) => {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`,
-  );
+  try {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`,
+    );
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const total = +response.headers.get("x-total-count");
+    const items = await response.json();
+    return { items, total };
+  } catch (error) {
+    throw error;
   }
-
-  const total = +response.headers.get("x-total-count");
-  const items = await response.json();
-  return { items, total };
 };
 
 const renderPhotoItem = (item) => `
@@ -46,17 +50,21 @@ const renderPhotoItem = (item) => `
 `;
 
 const getPhotoItems = async ({ limit, page }) => {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/photos?_limit=${limit}&_page=${page}`,
-  );
+  try {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/photos?_limit=${limit}&_page=${page}`,
+    );
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const total = +response.headers.get("x-total-count");
+    const items = await response.json();
+    return { items, total };
+  } catch (error) {
+    throw error;
   }
-
-  const total = +response.headers.get("x-total-count");
-  const items = await response.json();
-  return { items, total };
 };
 
 const init = () => {
