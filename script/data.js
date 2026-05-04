@@ -1,7 +1,22 @@
 export const PIZZA_TYPES = {
-  margarita: { name: "Маргарита", price: 500, calories: 300 },
-  pepperoni: { name: "Пепперони", price: 800, calories: 400 },
-  bavarian: { name: "Баварская", price: 700, calories: 450 },
+  margarita: {
+    name: "Маргарита",
+    price: 500,
+    calories: 300,
+    image: "../assets/margarita.png",
+  },
+  pepperoni: {
+    name: "Пепперони",
+    price: 800,
+    calories: 400,
+    image: "../assets/pepperoni.png",
+  },
+  bavarian: {
+    name: "Баварская",
+    price: 700,
+    calories: 450,
+    image: "../assets/bavarian.png",
+  },
 };
 
 export const SIZES = {

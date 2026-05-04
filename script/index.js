@@ -1,4 +1,4 @@
-import { PIZZA_TYPES, SIZES, TOPPINGS } from "./constants.js";
+import { PIZZA_TYPES, SIZES, TOPPINGS } from "./data.js";
 import { Pizza } from "./pizza.js";
 
 let currentPizza = null;
@@ -74,6 +74,7 @@ document.querySelectorAll(".topping-card").forEach((card) => {
 function updateUI() {
   if (!currentPizza) {
     document.getElementById("summaryType").textContent = "—";
+    document.getElementById("pizzaImage").src = "";
     document.getElementById("summarySize").textContent = "—";
     document.getElementById("summaryToppings").innerHTML =
       '<span class="no-toppings">нет добавок</span>';
@@ -85,6 +86,8 @@ function updateUI() {
 
   // Обновляем название
   const typeName = PIZZA_TYPES[currentPizza.type]?.name || currentPizza.type;
+  const pizzaImage =
+    PIZZA_TYPES[currentPizza.type]?.image || currentPizza.type.image;
   const sizeName = currentPizza.size
     ? SIZES[currentPizza.size.name]?.displayName
     : "";
@@ -94,6 +97,9 @@ function updateUI() {
 
   // Обновляем итоги
   document.getElementById("summaryType").textContent = typeName;
+
+  document.getElementById("pizzaImage").src = pizzaImage;
+
   document.getElementById("summarySize").textContent = currentPizza.size
     ? SIZES[currentPizza.size.name]?.displayName
     : "—";
