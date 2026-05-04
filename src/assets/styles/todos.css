@@ -1,0 +1,44 @@
+.todos-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+#todoForm {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#todoForm input {
+  flex: 1;
+  padding: 8px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
